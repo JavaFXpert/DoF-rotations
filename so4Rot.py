@@ -7,8 +7,8 @@ import numpy as np
 
 theta = Parameter('theta')
 
-crx = np.array([[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, quil_cos(theta / 2), -1j * quil_sin(theta / 2)], [0, 0, -1j * quil_sin(theta / 2), quil_cos(theta / 2)]])
-acrx = np.array([[quil_cos(theta / 2), -1j * quil_sin(theta / 2), 0, 0], [-1j * quil_sin(theta / 2), quil_cos(theta / 2), 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]])
+crx = np.array([[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, quil_cos(theta / 2), -1 * quil_sin(theta / 2)], [0, 0, quil_sin(theta / 2), quil_cos(theta / 2)]])
+acrx = np.array([[quil_cos(theta / 2), -1 * quil_sin(theta / 2), 0, 0], [quil_sin(theta / 2), quil_cos(theta / 2), 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]])
 
 dg_crx = DefGate('CRX', crx, [theta])
 dg_acrx = DefGate('ACRX', acrx, [theta])
