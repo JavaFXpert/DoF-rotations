@@ -19,16 +19,32 @@ ACRX = dg_acrx.get_constructor()
 qvm = api.QVMConnection()
 p = pq.Program()
 
-p.inst(X(0))
-p.inst(X(1))
-
+p.inst(dg_crx)
 p.inst(dg_acrx)
+
+#p.inst(X(0))
+#p.inst(X(1))
+
+# CD rotation
 p.inst(ACRX(np.pi/4)(1, 0))
+
+# CE rotation
 p.inst(ACRX(np.pi/4)(0, 1))
 
-p.inst(dg_crx)
+# CF rotation
+p.inst(CNOT(0, 1))
+p.inst(ACRX(np.pi/4)(1, 0))
+p.inst(CNOT(0, 1))
 
+# DE rotation
+p.inst(CNOT(0, 1))
+p.inst(CRX(np.pi/4)(1, 0))
+p.inst(CNOT(0, 1))
+
+# DF rotation
 p.inst(CRX(np.pi/4)(0, 1))
+
+# EF rotation
 p.inst(CRX(np.pi/4)(1, 0))
 
 
