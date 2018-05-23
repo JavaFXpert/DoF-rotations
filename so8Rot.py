@@ -55,8 +55,8 @@ p.inst(dg_aary)
 p.inst(dg_ccry)
 p.inst(dg_cary)
 
-p.inst(X(0))
-p.inst(X(1))
+# p.inst(X(0))
+# p.inst(X(1))
 p.inst(X(2))
 
 # CD rotation
@@ -101,6 +101,11 @@ p.inst(X(2))
 # DB rotation
 # p.inst(CARY(np.pi/4)(2, 1, 0))
 
+# DG rotation
+p.inst(ANOT(2, 0))
+p.inst(AARY(np.pi/4)(0, 1, 2))
+p.inst(ANOT(2, 0))
+
 # DC' rotation
 # p.inst(ANOT(1, 2))
 # p.inst(CCRY(np.pi/4)(0, 2, 1))
@@ -112,9 +117,9 @@ p.inst(X(2))
 # p.inst(X(2))
 
 # EC' rotation
-p.inst(ANOT(0, 2))
-p.inst(CCRY(np.pi/4)(1, 2, 0))
-p.inst(ANOT(0, 2))
+# p.inst(ANOT(0, 2))
+# p.inst(CCRY(np.pi/4)(1, 2, 0))
+# p.inst(ANOT(0, 2))
 
 # FG rotation
 # p.inst(CARY(np.pi/4)(2, 1, 0))
