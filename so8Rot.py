@@ -102,9 +102,9 @@ p.inst(X(2))
 # p.inst(CARY(np.pi/4)(2, 1, 0))
 
 # DG rotation
-p.inst(ANOT(2, 0))
-p.inst(AARY(np.pi/4)(0, 1, 2))
-p.inst(ANOT(2, 0))
+# p.inst(ANOT(2, 0))
+# p.inst(AARY(np.pi/4)(0, 1, 2))
+# p.inst(ANOT(2, 0))
 
 # DC' rotation
 # p.inst(ANOT(1, 2))
@@ -115,6 +115,11 @@ p.inst(ANOT(2, 0))
 # p.inst(X(2))
 # p.inst(CCRY(np.pi/4)(1, 2, 0))
 # p.inst(X(2))
+
+# EG rotation
+p.inst(ANOT(2, 1))
+p.inst(AARY(np.pi/4)(0, 1, 2))
+p.inst(ANOT(2, 1))
 
 # EC' rotation
 # p.inst(ANOT(0, 2))
