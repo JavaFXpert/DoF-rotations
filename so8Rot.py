@@ -55,7 +55,7 @@ p.inst(dg_aary)
 p.inst(dg_ccry)
 p.inst(dg_cary)
 
-p.inst(X(0))
+# p.inst(X(0))
 p.inst(X(1))
 p.inst(X(2))
 
@@ -84,9 +84,9 @@ p.inst(X(2))
 # p.inst(CNOT(2, 1))
 
 # DC rotation
-p.inst(ANOT(1, 2))
-p.inst(CCRY(np.pi/4)(0, 2, 1))
-p.inst(ANOT(1, 2))
+# p.inst(ANOT(1, 2))
+# p.inst(CCRY(np.pi/4)(0, 2, 1))
+# p.inst(ANOT(1, 2))
 
 # DE rotation
 # p.inst(CNOT(1, 0))
@@ -107,7 +107,10 @@ p.inst(ANOT(1, 2))
 # p.inst(CARY(np.pi/4)(2, 1, 0))
 
 # EF rotation
-# p.inst(CRY(np.pi/4)(1, 0))
+# p.inst(X(2))
+# p.inst(CCRY(np.pi/4)(1, 2, 0))
+# p.inst(X(2))
+
 
 # FC rotation
 # p.inst(CCRY(np.pi/4)(0, 1, 2))
@@ -117,6 +120,11 @@ p.inst(ANOT(1, 2))
 
 # FC rotation
 # p.inst(CCRY(np.pi/4)(0, 1, 2))
+
+# GB rotation
+p.inst(X(0))
+p.inst(CCRY(np.pi/4)(0, 2, 1))
+p.inst(X(0))
 
 wavefunction = qvm.wavefunction(p)
 print(wavefunction)
