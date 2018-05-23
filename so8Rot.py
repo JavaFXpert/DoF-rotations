@@ -128,9 +128,12 @@ p.inst(X(2))
 # p.inst(X(0))
 
 # GC' rotation
-p.inst(ANOT(1, 0))
+# p.inst(ANOT(1, 0))
+# p.inst(CCRY(np.pi/4)(0, 2, 1))
+# p.inst(ANOT(1, 0))
+
+# AC' rotation
 p.inst(CCRY(np.pi/4)(0, 2, 1))
-p.inst(ANOT(1, 0))
 
 wavefunction = qvm.wavefunction(p)
 print(wavefunction)
