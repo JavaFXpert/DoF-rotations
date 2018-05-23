@@ -59,20 +59,33 @@ p.inst(dg_aary)
 p.inst(dg_ccry)
 p.inst(dg_cary)
 
-p.inst(X(0))
+# p.inst(X(0))
 p.inst(X(1))
 p.inst(X(2))
 
 # CD rotation
-p.inst(AARY(np.pi/4)(2, 1, 0))
+# p.inst(AARY(np.pi/4)(2, 1, 0))
 
 # CE rotation
-p.inst(AARY(np.pi/4)(2, 0, 1))
+# p.inst(AARY(np.pi/4)(2, 0, 1))
 
 # CF rotation
-# p.inst(CNOT(0, 1))
-# p.inst(ARY(np.pi/4)(1, 0))
-# p.inst(CNOT(0, 1))
+# p.inst(CNOT(1, 0))
+# p.inst(AARY(np.pi/4)(0, 2, 1))
+# p.inst(CNOT(1, 0))
+
+# CG rotation
+# p.inst(AARY(np.pi/4)(0, 1, 2))
+
+# CA rotation
+# p.inst(CNOT(2, 0))
+# p.inst(AARY(np.pi/4)(0, 1, 2))
+# p.inst(CNOT(2, 0))
+
+# CB rotation
+p.inst(CNOT(2, 1))
+p.inst(AARY(np.pi/4)(0, 1, 2))
+p.inst(CNOT(2, 1))
 
 # DE rotation
 # p.inst(CNOT(1, 0))
@@ -80,17 +93,22 @@ p.inst(AARY(np.pi/4)(2, 0, 1))
 # p.inst(CNOT(1, 0))
 
 # DF rotation
-#NOT QUITE RIGHT
-# p.inst(CARY(np.pi/4)(0, 2, 1))
+#TODO: Make CARY gate work
+# p.inst(X(2))
+# p.inst(CCRY(np.pi/4)(0, 2, 1))
+# p.inst(X(2))
+
+# DB rotation
+#p.inst(CARY(np.pi/4)(2, 1, 0))
 
 # EF rotation
 # p.inst(CRY(np.pi/4)(1, 0))
 
-
-
 # FC rotation
-p.inst(CCRY(np.pi/4)(0, 1, 2))
+# p.inst(CCRY(np.pi/4)(0, 1, 2))
 
+# FG rotation
+# p.inst(CARY(np.pi/4)(2, 1, 0))
 
 wavefunction = qvm.wavefunction(p)
 print(wavefunction)
