@@ -55,12 +55,15 @@ p.inst(dg_aary)
 p.inst(dg_ccry)
 p.inst(dg_cary)
 
-p.inst(X(0))
-p.inst(X(1))
-p.inst(X(2))
+#p.inst(X(0))
+#p.inst(X(1))
+#p.inst(X(2))
 
 # CD rotation
 p.inst(AARY(np.pi/4)(2, 1, 0))
+
+wavefunction = qvm.wavefunction(p)
+print(wavefunction)
 
 # CE rotation
 p.inst(AARY(np.pi/4)(2, 0, 1))
