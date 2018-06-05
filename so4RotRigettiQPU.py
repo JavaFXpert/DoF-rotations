@@ -17,15 +17,15 @@ compiler = CompilerConnection(agave)
 
 theta = Parameter('theta')
 
-yrot = np.pi/8
-#########yrot = -np.pi/(8)
+############yrot = np.pi/8
+yrot = -np.pi/(8)
 
-qvm = api.QVMConnection()
-#qpu = api.QPUConnection(agave)
+#qvm = api.QVMConnection()
+qpu = api.QPUConnection(agave)
 p = pq.Program()
 
-p.inst(X(0))
-p.inst(X(1))
+# p.inst(X(0))
+# p.inst(X(1))
 
 # CD rotation (GOOD)
 p.inst(X(1))
@@ -77,8 +77,8 @@ p.inst(RY(-1 * yrot)(0))
 p.inst(CNOT(1, 0))
 p.inst(RY(yrot)(0))
 
-wavefunction = qvm.wavefunction(p)
-print(wavefunction)
+# wavefunction = qvm.wavefunction(p)
+# print(wavefunction)
 
 
 #FOR COMPILERCONNECTION
@@ -92,5 +92,5 @@ print(wavefunction)
 # print('program fidelity', job.program_fidelity())
 # print('multiqubit gate depth', job.multiqubit_gate_depth())
 #
-# res = qpu.run_and_measure(p, [1, 0], trials=1000)
-# print(res)
+res = qpu.run_and_measure(p, [1, 0], trials=1000)
+print(res)
