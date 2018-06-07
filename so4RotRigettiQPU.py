@@ -92,5 +92,6 @@ p.inst(RY(yrot)(0))
 # print('program fidelity', job.program_fidelity())
 # print('multiqubit gate depth', job.multiqubit_gate_depth())
 #
-res = qpu.run_and_measure(p, [1, 0], trials=1000)
+#res = qpu.run_and_measure(p, [1, 0], trials=1000)
+res = qpu.run(p, [1, 0], trials=1000)
 print(res)
